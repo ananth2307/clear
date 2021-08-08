@@ -1,5 +1,17 @@
+.clear {
+  display: none;
+}
+.input-control {
+  padding: 10px;
+  margin: 20px;
+}
+.input-control:focus ~ button.clear {
+  display: block;
+}
+
 .App {
   text-align: center;
+  display: flex;
 }
 
 .App-logo {

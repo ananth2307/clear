@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      imput: "",
+    };
+  }
+  handleChange = (e) => {
+    this.setState({ input: e.target.value });
+  };
+  handleClear = () => {
+    this.setState({ input: "" });
+  };
+  render() {
+    return (
+      <div className="App">
+        <h4>Click on textbox to see clear btn</h4>
+        <input
+          type="text"
+          onChange={this.handleChange}
+          value={this.state.input}
+          className="input-control"
+        />
+        <button type="button" onClick={this.handleClear} className="clear">
+          Clear
+        </button>
+      </div>
+    );
+  }
 }
 
 export default App;
